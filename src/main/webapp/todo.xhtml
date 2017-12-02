@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Todoリスト</title>
+</h:head>
+<h:outputScript>
+function monitoring(data){
+	window.alert('status: ' + data.status + '');
+}
+</h:outputScript>
+<h:body>
+	<h:form id="form">
+		<h:outputLabel value="Todoを入力してください2" />
+		<h:inputText id="inputTodo" value="#{todoBean.todo}">
+			<f:ajax event="keyup" render="outputText" onevent="monitoring" />
+		</h:inputText>
+		<h:commandButton value="追加" action="#{todoBean.add()}" />
+		<h:dataTable id="todoList" var="todo" value="#{todoBean.todoList}">
+			<h:column>
+				<h:outputText value="#{todo}" />
+			</h:column>
+		</h:dataTable>
+	</h:form>
+	<h:outputLabel id="lbl" value="Perfect Java EE" />
+	<h:outputText id="outputText" value="" />
+</h:body>
+</html>

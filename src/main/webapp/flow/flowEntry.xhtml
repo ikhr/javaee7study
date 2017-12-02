@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<title>Entry</title>
+</h:head>
+<!-- http://localhost:8080/myapp/faces/flow/flowEntry.xhtml -->
+<!-- http://localhost:8080/myapp/faces/flow/firstFlow.xhtml -->
+<h:body>
+	<h:form>
+		<!-- ビジネスロジックとナビゲーションハンドリングで使う場合、action -->
+		<!-- GETによる遷移 -->
+		<h:link value="Start" outcome="#{flowCounterDefinition.flowId}" />
+		<!-- GETによる遷移 -->
+		<h:button value="Start" outcome="#{flowCounterDefinition.flowId}" />
+		<!-- POSTによる遷移 -->
+		<h:commandButton value="Start" action="counterFlow" />
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<title>First</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:outputText value="#{flowCounter.count}" />
+		<!-- UIロジックで使う、ナビゲーションハンドリングで使わない場合、actionListener -->
+		<h:commandButton value="Count Up" actionListener="#{flowCounter.increment()}" />
+		<!-- ビジネスロジックとナビゲーションハンドリングで使う場合、action -->
+		<h:commandButton value="Second" action="second" />
+		<h:commandButton value="Second" action="/flow/secondFlow.xhtml?faces-redirect=true" />
+	</h:form>
+</h:body>
+</html>
